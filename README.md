@@ -8,4 +8,4 @@
 
 ## Step 3: Run Web Server
 - cd into the project folder where manage.py is located
-- run 'python manage.py runserver
+- run 'python manage.py runserver'
