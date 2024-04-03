@@ -27,3 +27,13 @@ _`
 ## Step 7: Add Templates Folder
 -`'DIRS': [BASE_DIR/'templates'],`
 -Add template folder inside app folder.
+
+## View Function
+```python
+def base(request):
+    context={
+
+    }
+
+    return render(request, 'base.html', context)
+```
