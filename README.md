@@ -23,3 +23,7 @@
 -'...
 -'app_name',
 _`
+
+## Step 7: Add Templates Folder
+-`'DIRS': [BASE_DIR/'templates'],`
+-Add template folder inside app folder.
