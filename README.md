@@ -17,3 +17,9 @@
 ## Step 5: Create Super
 -cd into folder with manage.py
 - `python manage.py createsuperuser`
+
+## Step 6: Add App to Settings' Installed apps Dictionary
+-`INSTALLED_APPS = [
+-'...
+-'app_name',
+_`
