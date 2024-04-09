@@ -55,3 +55,18 @@ urlpatterns = [
     path('base/', views.base, name='base')
 ]
 ```
+
+
+## How to inherite code from template
+### Base.html
+```python
+{% block content %}
+
+          {% endblock %}
+```
+
+### Template
+```python
+{% load static %}
+
+{% include 'base.html' %}
