@@ -1,0 +1,34 @@
+
+
+{% extends 'base.html' %}
+
+{%block content%}
+
+<br><br><br>
+
+<center><h1>Teachers<h1><center>
+
+<table class="table table-striped">
+
+    <thead>
+        <th>Last Name<th/>
+        <th>First Name<th/>
+        <th>Room Number<th/>
+        <th>Subject<th/>
+    <thead>
+    
+        {% for i in teachers %}
+            <tr>
+                <td>{{ i.lastname }}<td/>
+                <td>{{ i.firstname}}<td/>
+                <td>{{i.room_number}}<td/>
+                <td>{{i.subject}}<td/>
+            <tr>
+        {% endfor %}
+</table>
+
+
+
+
+
+{% endblock %}
