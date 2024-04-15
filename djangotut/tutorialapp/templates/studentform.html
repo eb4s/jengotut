@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<style>
+    body{
+        margin:100px;
+        width: 600px;
+    }
+</style>
+<h1>Student Submission Form</h1>        
+    {% csrf_token %}
+    <div class="card">
+        <div class="card-body">
+            {{form.as_p}}
+
+            <button type="submit" class = "btn btn-primary" value = "Submit" id="submitbutton">
+                Submit Student
+            </button>
+        </div>
+      </div>
+
+
+
+
+    
+
+{% endblock %}
