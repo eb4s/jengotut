@@ -34,6 +34,13 @@ class Teachers (models.Model):
     def __str__(self):
         return "" + str(self.lastname) + ", " + str(self.firstname)
 
+    
+    firstname = models.CharField(max_length=200, null=True, verbose_name="First Name: ")
+    lastname = models.CharField(max_length=200, null=True, verbose_name="Last Name: ")
+    room_number = models.CharField(max_length=200, null=True, verbose_name="Room Number:")
+    subject = models.CharField(max_length=200, null=True, choices=SUBJECTS, verbose_name="Subject: ")
+    
+
 
 
 
