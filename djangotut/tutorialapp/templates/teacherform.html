@@ -21,12 +21,13 @@
                   </svg> {{message}}
                 {% endfor %}
             {% endif %}
-            {{form.as_p}}
-
-
-            <button type="submit" class = "btn btn-primary" value = "submit" id="submitbutton">
-                Submit Teacher
-            </button>
+           <form method="post" action="" id="studentform" >
+                {% csrf_token %}       
+                    {{ form.as_p}}
+                <p>
+                     <button type="submit" class="btn btn-primary" value="Submit" id="studentformbtn">Submit!</button>  
+                </p>
+            </form>
         </div>
     </div>
    

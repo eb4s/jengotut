@@ -52,7 +52,7 @@ def teacherform(request):
                 print("{}: ({} {}".format\
                 (name, type(value), value))
         #save data locally but not to the database yet
-        requests = form.save(commit=False)
+        requests = form.save(commit=False) #captures all data entered in form and saves to a requests list object
 
 
         #save each field to local variable
@@ -60,7 +60,7 @@ def teacherform(request):
         lastname = form.cleaned_data['lastname']
         room_number = form.cleaned_data['room_number']
         subject = form.cleaned_data['subject']         
-        request.save() #save to the database
+        requests.save() #save to the database
 
         messages.success(request, "New Teacher Added Succesfully!")
 
