@@ -97,6 +97,46 @@
       </ul>
     </div>
 
+
+    <div class="b-example-divider"></div>
+
+    <div class="modal modal-sheet position-static d-block bg-body-secondary p-4 py-md-5" tabindex="-1" role="dialog" id="modalTour">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content rounded-4 shadow">
+          <div class="modal-body p-5">
+            <h2 class="fw-bold mb-0">What's new</h2>
+    
+            <ul class="d-grid gap-4 my-5 list-unstyled small">
+              <li class="d-flex gap-4">
+                <img src="{% static 'images/vote.png' %}" style="width:5em; height:5em;" />
+                <div>
+                  <h5 class="mb-0">Vote</h5>
+                   Vote for the better album.
+                </div>
+              </li>
+              <li class="d-flex gap-4">
+                <img src="{% static 'images/images.png' %}" style="width:5em; height:5em;" />
+                <div>
+                  <h5 class="mb-0">Images</h5>
+                  See the album.
+                </div>
+              </li>
+              <li class="d-flex gap-4">
+                <img src="{% static 'images/rappers.png' %}" style="width:5em; height:5em;" />
+                <div>
+                  <h5 class="mb-0">New artists</h5>
+                  Look at the variaty of artists.
+                </div>
+              </li>
+            </ul>
+            <button type="button" class="btn btn-lg btn-primary mt-5 w-100" data-bs-dismiss="modal">Great, thanks!</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
     <main class="px-3">
         <h1>Eminem.</h1>
         <p class="lead">This artist has one of my favorite discographies and flows</p>
@@ -139,6 +179,12 @@
   </main>
 
 
+
+
+
+
+
+  
   <section class="py-5 text-center container">
     <div class="row py-lg-5">
       <div class="col-lg-6 col-md-8 mx-auto">
