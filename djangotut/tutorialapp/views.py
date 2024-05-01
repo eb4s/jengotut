@@ -1,5 +1,6 @@
 from multiprocessing import context
 from django.shortcuts import render
+from django.contrib.auth.forms import UserCreationForm
 
 from .forms import StudentForm
 from .models import *
@@ -9,6 +10,27 @@ from django.contrib import messages
 
 
 # Create your views here.
+
+def registerPage(request):
+    form = UserCreationForm
+    context={}
+
+    return render(request, 'register.html', context)
+
+
+
+
+
+def loginPage(request):
+    form = UserCreationForm
+    context={}
+
+    return render(request, 'login.html', context)
+
+
+
+
+
 
 def base(request):
     context={
