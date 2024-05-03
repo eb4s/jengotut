@@ -1,6 +1,7 @@
 from multiprocessing import context
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import authenticate, login
 
 from .forms import StudentForm
 from .models import *
@@ -122,3 +123,15 @@ def studentform(request):
     return render(request, 'studentform.html', \
         {'method': request.method, 'form': form}
         )
+
+def register(request):
+    form = RegistrationForm
+    if request.method== 'POST':
+        form = RegistrationForm(request.post)
+        if form.is_valid():
+            user = form.save()
+            login(request.user)
+            return redirect('')
+        else:
+            form = RegistrationForm()
+    return render(request, "registration.html", {'form' :form})
