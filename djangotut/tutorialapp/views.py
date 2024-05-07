@@ -34,11 +34,25 @@ def loginPage(request):
 
 
 def base(request):
-    context={
 
+    
+
+    context={
+        
     }
 
     return render(request, 'base.html', context)
+
+def profile(request):
+    mystudentaccounts = Student.objects.filter(lastname=request.user.lastname, firstname=request.user.firstname)
+    myteacheraccounts = Teachers.objects.filter(lastname=request.user.lastname, firstname=request.user.firstname)
+
+    context={
+        'mystudentaccounts' :mystudentaccounts,
+        'myteacheraccounts' :myteacheraccounts,
+    }
+
+    return render(request, 'profile.html', context)
 
 def home(request):
     context={
