@@ -39,12 +39,22 @@
                     <a class="nav-link" href="{% url 'teachers' %}">Teachers</a>
                   </li>
                   <li class="nav-item">
+                    <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                </li>
+
+
+
+                {% for group in request.user.groups.all %}
+                  {% if group.name == 'teacher' %}
+                  <li class="nav-item">
                     <a class="nav-link" href="{% url 'teacherform' %}">Teacher Form</a>
                 </li>
-                  {% if request.user.groups.all.name == "teacher" %}
+
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'studentform' %}">Student Form</a>
                   </li>
+                  {% endif %}
+                {% endfor %}
 
                   {% if user.is_authenticated %}
                   <li class="nav-item">

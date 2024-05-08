@@ -44,8 +44,8 @@ def base(request):
     return render(request, 'base.html', context)
 
 def profile(request):
-    mystudentaccounts = Student.objects.filter(lastname=request.user.lastname, firstname=request.user.firstname)
-    myteacheraccounts = Teachers.objects.filter(lastname=request.user.lastname, firstname=request.user.firstname)
+    mystudentaccounts = Student.objects.filter(lastname=request.user.last_name, firstname=request.user.first_name)
+    myteacheraccounts = Teachers.objects.filter(lastname=request.user.last_name, firstname=request.user.first_name)
 
     context={
         'mystudentaccounts' :mystudentaccounts,

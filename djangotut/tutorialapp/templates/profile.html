@@ -5,15 +5,84 @@
 {% block content %}
 
 
-<div class="card" style="width: 18rem;">
+<div class="card" style="width: 90%;margin-top: 200px;margin-left: 100px;">
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
+      <h5 class="card-title">Profile</h5>
       <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
+      <p class="card-text"></p>
+        <table border="1" width"100%" class="table table-light table-stripped">
+          <thead>
+            <tr>
+                <th scope="col">Last Name</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Username</th>
+                <th scope="col">Email</th>
+                <th scope="col">Last Login</th>
+                <th scope="col">First Login</th>
+                <th scope="col">Groups</th>
+            </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>{{request.user.last_name}}</td>
+                  <td>{{request.user.first_name}}</td>
+                  <td>{{request.user.username}}</td>
+                  <td>{{request.user.email}}</td>
+                  <td>{{request.user.last_login}}</td>
+                  <td>{{request.user.date_joined}}</td>
+                  <td>
+                      {% for group in request.user.groups.all %}
+                          {{group.name}}<br>
+                      {% endfor %}
+
+                  </td>
+                </tr>
+            </tbody>
+          </table>
+
+      </p>
+
+
     </div>
   </div>
+
+
+
+  <div class="card" style="width: 90%;margin-top: 200px;margin-left: 100px;">
+    <div class="card-body">
+      <h5 class="card-title">My Student Data</h5>
+      <h6 class="card-subtitle mb-2 text-body-secondary"></h6>
+      <p class="card-text"></p>
+        <table border="1" width"100%" class="table table-light table-stripped">
+          <thead>
+            <tr>
+                <th scope="col">Last Name</th>
+                <th scope="col">First Name</th>
+                <th scope="col">Middle Name</th>
+                <th scope="col">Grade</th>
+                
+            </tr>
+            {% for i in mystudentaccounts %}
+              <tr>
+                  <td>{{i.lastname}}</td>
+                  <td>{{i.firstname}}</td>
+                  <td>{{i.middlename}}</td>
+                  <td>{{i.grade}}</td>
+              </tr>
+                      
+                      {% endfor %}
+
+                  </td>
+                </tr>
+            </tbody>
+          </table>
+
+      </p>
+
+
+    </div>
+  </div>
+
 
 
 

@@ -11,13 +11,13 @@ class StudentForm(forms.ModelForm):
         model = Student
         fields = ['firstname', 'lastname', 'middlename', 'grade']
 
-class teacherForm(forms.ModelForm):
+class TeacherForm(forms.ModelForm):
     class Meta:
         model = Teachers
         fields = ['firstname', 'lastname', 'room_number', 'subject']
 
-class RegistrationForm(forms.UserCreationForm):
-    email = forms.EmailFeild(required = True)
+class RegistrationForm(UserCreationForm):
+    email = forms.EmailField(required = True)
     class Meta:
         model = User
-        feilds = ['username', 'email', 'password1', 'password2']
+        fields = ['username', 'email', 'password1', 'password2']
