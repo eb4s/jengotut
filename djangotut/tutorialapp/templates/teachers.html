@@ -4,6 +4,10 @@
 
 {%block content%}
 
+
+{% if user.is_authenticated %}
+
+
 <br><br><br>
 
 <center><h1>Teachers<h1><center>
@@ -28,7 +32,12 @@
 </table>
 
 
+{% else %}
+<br>
+<br>
+<h1>sorry you must be logged in to view this page...</h1>
 
+{% endif %}
 
 
 {% endblock %}

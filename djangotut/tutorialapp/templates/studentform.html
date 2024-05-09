@@ -3,6 +3,12 @@
 
 
 {% block content %}
+
+{% for group in request.user.groups.all %}
+{% if group.name == 'teacher' %}
+
+
+
 <style>
     body{
         margin:100px;
@@ -25,5 +31,8 @@
 
 
     
+{% endif %}
+
+{% endfor %}
 
 {% endblock %}

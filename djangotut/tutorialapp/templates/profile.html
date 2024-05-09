@@ -4,6 +4,7 @@
 
 {% block content %}
 
+{% if user.is_authenticated %}
 
 <div class="card" style="width: 90%;margin-top: 200px;margin-left: 100px;">
     <div class="card-body">
@@ -84,6 +85,11 @@
   </div>
 
 
+  {% else %}
+          
+  <h1>sorry you must be logged in to view this page...<h1>
+
+  {% endif %}
 
 
 {% endblock %}

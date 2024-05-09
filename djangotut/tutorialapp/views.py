@@ -82,7 +82,7 @@ def teachers(request):
 def teacherform(request):
     context={}
     if request.method == "POST": #check for button click
-        form = teacherForm(request.POST)
+        form = TeacherForm(request.POST)
         if form.is_valid():
             context=""
             for name, value in form.cleaned_data.items():
@@ -103,7 +103,7 @@ def teacherform(request):
 
 
     else:
-        form = teacherForm()
+        form = TeacherForm()
     #return the form and all of it fi
     return render(request, "teacherform.html", \
         {"method": request.method, "form": form}
